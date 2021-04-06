@@ -85,6 +85,24 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "simhol",
+      "name": "Simon Holdorf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4987937?v=4",
+      "profile": "https://simonholdorf.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "timuster",
+      "name": "Sumit Kumar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2242052?v=4",
+      "profile": "https://github.com/timuster",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
