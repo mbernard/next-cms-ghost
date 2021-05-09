@@ -122,17 +122,13 @@ yarn build
 
 ## 🌀 NextJS image optimizations
 
-You must add all domains that you use for in-sourcing images in the `next.config.js` file, for example:
+The `IMAGE_DOMAINS` environment variable must contain a comma separated list of all domains that you use for in-sourcing images. For example:
 
-```javascript
-module.exports = {
-  images: {
-    domains: ['images.unsplash.com', 'static.gotsby.org'],
-  },
-}
+```
+IMAGE_DOMAINS=res.cloudinary.com,yoursource.imgix.net
 ```
 
-Note that image optimization does not work with Netlify. Therefore, image optimization is automatically turned off when deploying to Netlify.
+> Image optimization is automatically turned off when deploying to Netlify, because it is currently on supported on Netlify.
 
 &nbsp;
 
@@ -172,10 +168,10 @@ CMS_GHOST_API_KEY=9fccdb0e4ea5b572e2e5b92942
 
 If you build your project with a cloud provider, the best option is to provide the keys with environment variables:
 
-| Key               | Value (example)             |
-| ----------------- | --------------------------- |
-| CMS_GHOST_API_URL | https:\/\/cms.your-blog.org |
-| CMS_GHOST_API_KEY | 9fccdb0e4ea5b572e2e5b92942  |
+| Key               | Value (example)              |
+| ----------------- | ---------------------------- |
+| CMS_GHOST_API_URL | https:\/\/your-ghost-cms.org |
+| CMS_GHOST_API_KEY | 9fccdb0e4ea5b572e2e5b92942   |
 
 &nbsp;
 
@@ -225,6 +221,7 @@ Special thanks goes to these wonderful people ([emoji key](https://allcontributo
     <td align="center"><a href="http://davor.pro"><img src="https://avatars.githubusercontent.com/u/1422662?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Davor Budimir</b></sub></a><br /><a href="https://github.com/styxlab/next-cms-ghost/issues?q=author%3ABuda9" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://simonholdorf.com"><img src="https://avatars.githubusercontent.com/u/4987937?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Simon Holdorf</b></sub></a><br /><a href="https://github.com/styxlab/next-cms-ghost/issues?q=author%3Asimhol" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/timuster"><img src="https://avatars.githubusercontent.com/u/2242052?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumit Kumar</b></sub></a><br /><a href="https://github.com/styxlab/next-cms-ghost/issues?q=author%3Atimuster" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/francolamcn"><img src="https://avatars.githubusercontent.com/u/73523739?v=4?s=100" width="100px;" alt=""/><br /><sub><b>francolamcn</b></sub></a><br /><a href="https://github.com/styxlab/next-cms-ghost/issues?q=author%3Afrancolamcn" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

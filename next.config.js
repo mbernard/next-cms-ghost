@@ -24,6 +24,7 @@ module.exports = withBundleAnalyzer({
       'www.miguelbernard.com',
       'cms.miguelbernard.com',
       'cms-dev.miguelbernard.com',
+      ...(process.env.IMAGE_DOMAINS || '').split(','),
     ],
   },
   reactStrictMode: true,
