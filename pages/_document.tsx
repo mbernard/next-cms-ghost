@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 import { resolve } from 'url'
 import { processEnv } from '@lib/processEnv'
 import { MailchimpPopup } from '@components/MailchimpPopup'
-import { GA_TRACKING_ID } from '@lib/gtag'
+import { GA_MEASUREMENT_ID } from '@lib/gtag'
 import { AdWords } from '@components/AdWords'
 import { BuyMeACoffee } from '@components/BuyMeACoffee'
 import { StickyShareButtons } from 'sharethis-reactjs';
@@ -36,18 +36,16 @@ export default class MyDocument extends Document {
               {/* Global Site Tag (gtag.js) - Google Analytics */}
               <script
                 async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
               />
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
 
-                    gtag('config', '${GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                    });
+                  gtag('config', ''${GA_MEASUREMENT_ID}');
                   `,
                 }}
               />
@@ -76,7 +74,7 @@ export default class MyDocument extends Document {
         <BuyMeACoffee />
 
         {isProduction && ( <AdWords />)}
-       
+
       </Html>
     )
   }
