@@ -15,7 +15,7 @@ import { StickyShareButtons } from 'sharethis-reactjs'
 
 if (process.env.NODE_ENV === 'production') {
   // Notice how we track pageview when route is changed
-  Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
+  // Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 }
 
 function App({ Component, pageProps }: AppProps) {
