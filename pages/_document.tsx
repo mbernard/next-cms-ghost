@@ -45,9 +45,9 @@ export default class MyDocument extends Document {
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
 
-                  gtag('config', '${GA_MEASUREMENT_ID}'), {
+                  gtag('config', '${GA_MEASUREMENT_ID}', {
                     page_path: window.location.pathname,
-                  });
+                  })
                   `,
                 }}
               />
