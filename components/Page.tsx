@@ -11,7 +11,7 @@ import { SEO } from '@meta/seo'
 import { GhostPostOrPage, GhostSettings } from '@lib/ghost'
 import { ISeoImage } from '@meta/seoImage'
 
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Prism from 'prismjs'
 
 /**
@@ -38,14 +38,18 @@ export const Page = ({ cmsData }: PageProps) => {
   const postClass = PostClass({ tags: page.tags, isPage: page && true, isImage: !!featImg })
   const htmlAst = page.htmlAst
   if (htmlAst === undefined) throw Error('Page.tsx: htmlAst must be defined.')
- 
+
   const { processEnv } = settings
   const { nextImages, prism } = processEnv
-  
+
   // Prism
-  if (prism.enable) {
-    useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => {
+    if (prism.enable) {
+      Prism.highlightAll()
+    }
   }
+    , [prism.enable]);
+
 
   return (
     <>

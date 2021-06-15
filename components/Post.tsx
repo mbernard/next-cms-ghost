@@ -63,9 +63,12 @@ export const Post = ({ cmsData }: PostProps) => {
   const collectionPath = collections.getCollectionByNode(post)
 
   // Prism
-  if (prism.enable) {
-    useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => {
+    if (prism.enable) {
+      Prism.highlightAll()
+    }
   }
+    , [prism.enable]);
 
   return (
     <>
