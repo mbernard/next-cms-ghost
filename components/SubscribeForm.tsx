@@ -1,5 +1,5 @@
-import { GhostSettings } from "@lib/ghost"
-import { useLang, get } from '@utils/use-lang'
+import { GhostSettings } from '@lib/ghost'
+import { getLang, get } from '@utils/use-lang'
 import { useOverlay } from '@components/contexts/overlayProvider'
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 
@@ -8,8 +8,8 @@ import { LoaderIcon } from '@icons/LoaderIcon'
 const url = "https://miguelbernard.us19.list-manage.com/subscribe/post?u=da6d67bd7f3ba3a760d0dd2a6&amp;id=ce423cd6f3"
 
 export const SubscribeForm = ({ settings }: { settings: GhostSettings }) => {
-  const text = get(useLang())
-  const { email, handleChange, handleClose } = useOverlay()
+  const text = get(getLang())
+  const { message, handleSubmit, email, handleChange, handleClose } = useOverlay()
 
   return (
     <MailchimpSubscribe url={url} render={({ subscribe, status, message }) => {
